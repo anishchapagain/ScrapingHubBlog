@@ -47,7 +47,7 @@ class BlogSpider(scrapy.Spider):
             # nextPage obtained from either XPath or CSS can be used.
             yield scrapy.Request(nextPage,callback=self.parse)
 		'''
-        print('Completed')
+		#print('Completed')
 
     '''Using CSS Selectors'''
     '''
