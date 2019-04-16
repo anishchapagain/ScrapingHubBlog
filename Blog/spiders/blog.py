@@ -40,13 +40,13 @@ class BlogSpider(scrapy.Spider):
             item['basic_description'] = row.xpath('div[@class="post-content"]//p/text()').extract_first()
 
             yield item
-
+		'''
         nextPage = response.xpath("//div[@class='blog-pagination']//a[@class='next-posts-link']/@href").extract_first()
         if nextPage:
             print("Next Page URL: ",nextPage)
             # nextPage obtained from either XPath or CSS can be used.
             yield scrapy.Request(nextPage,callback=self.parse)
-
+		'''
         print('Completed')
 
     '''Using CSS Selectors'''
