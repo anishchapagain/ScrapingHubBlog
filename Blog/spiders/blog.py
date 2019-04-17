@@ -9,7 +9,7 @@ class BlogSpider(scrapy.Spider):
 
     def parse(self, response):
         print("Response Type >>> ", type(response))
-        rows = response.css("div.post-item")
+        rows = response.css('div.post-item')
         print("Ready TO LOOP")
         c=1
         for row in rows:
@@ -31,6 +31,4 @@ class BlogSpider(scrapy.Spider):
             #     item['basic_description'] = ''
             c+=1
             #yield item
-
-
-    print('Completed')
+        print('Completed')
