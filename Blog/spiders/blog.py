@@ -7,7 +7,7 @@ class BlogSpider(scrapy.Spider):
     allowed_domains = ["blog.scrapinghub.com"]
     start_urls = ('https://blog.scrapinghub.com/tag/web-scraping',)
 
-    def parseCSS(self, response):
+    def parse(self, response):
         print("Response Type >>> ", type(response))
         rows = response.css(".post-item")
         print("Ready TO LOOP")
