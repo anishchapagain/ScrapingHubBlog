@@ -9,14 +9,14 @@ class BlogSpider(scrapy.Spider):
 
     def parse(self, response):
         print("Response Type >>> ", type(response))
-        rows = response.css('div.post-item')
+        rows = response.css('[class=post-item]')
         print("Ready TO LOOP")
         print("count >> ", rows.__len__())
         c=1
         for row in rows:
             print("Inside Row ",c)
-            print(row.css('div.post-header > h2 > a::text').extract_first())
-            print(row.css('div.post-header h2 a::text').extract_first())
+            print(row.css('[class=post-header] > h2 > a::text').extract_first())
+            print(row.css('[class=post-header] h2 a::text').extract_first())
             # item = BlogItem()
             # item['title'] = row.css('div.post-header > h2 > a::text').extract_first().strip()
             # item['blogUrl'] = row.css('div.post-header > h2 > a::attr(href)').extract_first().strip()
@@ -24,7 +24,7 @@ class BlogSpider(scrapy.Spider):
             # item['author_url'] = row.css('span.author > a::attr(href)').extract_first().strip()
             # item['post_date'] = row.css('span.date > a::text').extract_first().strip()
             # item['comments'] = row.css('span.custom_listing_comments > a::text').extract_first().strip()
-            desc=row.css('div.post-content > p::text').extract_first().strip()
+            desc=row.css('[class=post-content] p::text').extract_first()
             print("DESC >> ",desc)
             # if desc:
             #     item['basic_description'] = desc
