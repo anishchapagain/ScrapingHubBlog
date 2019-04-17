@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = 'Blog.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Blog (+http://www.yourdomain.com)'
-
+#ROBOTSTXT_OBEY = False
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS=16
 
@@ -26,8 +26,8 @@ CONCURRENT_REQUESTS=16
 # See also autothrottle settings and docs
 DOWNLOAD_DELAY=3
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN=16
-CONCURRENT_REQUESTS_PER_IP=16
+#CONCURRENT_REQUESTS_PER_DOMAIN=16
+#CONCURRENT_REQUESTS_PER_IP=16
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED=False
@@ -36,13 +36,13 @@ CONCURRENT_REQUESTS_PER_IP=16
 #TELNETCONSOLE_ENABLED=False
 
 # Override the default request headers:
-DEFAULT_REQUEST_HEADERS = {
-   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-   'Accept-Language': 'en-US,en;q=0.9',
-   'upgrade-insecure-requests': 1,
-   'accept-encoding': 'gzip, deflate, br',
-   'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
-}
+#DEFAULT_REQUEST_HEADERS = {
+   # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+   # 'Accept-Language': 'en',
+   # 'upgrade-insecure-requests': 1,
+   # 'accept-encoding': 'gzip, deflate, br',
+ #  'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+#}
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
@@ -67,6 +67,7 @@ DEFAULT_REQUEST_HEADERS = {
 ITEM_PIPELINES = {
     'Blog.pipelines.BlogPipeline': 300,
 }
+FEED_EXPORT_ENCODING = 'utf-8'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
