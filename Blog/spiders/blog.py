@@ -11,6 +11,7 @@ class BlogSpider(scrapy.Spider):
         print("Response Type >>> ", type(response))
         rows = response.css('div.post-item')
         print("Ready TO LOOP")
+        print("count >> ", rows.__len__())
         c=1
         for row in rows:
             print("Inside Row ",c)
