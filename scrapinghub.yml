@@ -1,0 +1,4 @@
+projects:
+    default: Blog
+stacks:
+    default: scrapy:1.3-py3
