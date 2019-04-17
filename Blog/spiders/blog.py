@@ -29,5 +29,7 @@ class BlogSpider(scrapy.Spider):
             print("DESC >> ",desc)
             if desc:
                 item['basic_description'] = row.xpath('div[@class="post-content"]//p/text()').extract_first()
+            else:
+                item['basic_description'] = ''
             c+=1
             yield item
