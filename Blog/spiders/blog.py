@@ -24,11 +24,12 @@ class BlogSpider(scrapy.Spider):
     or
     start_urls = ['http://blog.scrapinghub.com/tag/web-scraping/page/%s' % page for page in xrange(1, 4)]
     '''
+    '''
     def start_requests(self):
         headers= {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0'}
         for url in self.start_urls:
             yield scrapy.Request(url, headers=headers)
-            
+    '''     
     '''Using XPath'''
     def parse(self, response):
         print("Response Type >>> ", type(response))
